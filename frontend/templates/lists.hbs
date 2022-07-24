@@ -1,0 +1,35 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Control Number</th>
+        <th scope="col">Acc. Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Area</th>
+        <th scope="col">Value</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |list|}}
+        <tr>
+          <th>{{list.id}}</th>
+          <td>{{list.controlnum}}</td>
+          <td>{{list.accname}}</td>
+          <td>{{list.address}}</td>
+          <td>{{list.area}}</td>
+          <td>{{list.value}}</td>
+          <td>
+            <div>
+              {{#link-to 'listing' list.id class="list"}}
+                Edit
+              {{/link-to}}
+            </div>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+</div>

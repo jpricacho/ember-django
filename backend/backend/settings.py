@@ -87,9 +87,9 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {  
     'default': {  
         'ENGINE': 'django.db.backends.mysql',  
-        'NAME': 'mydb',  
+        'NAME': 'listing',  
         'USER': 'root',  
-        'PASSWORD': 'Kupengpat27!',  
+        'PASSWORD': 'listing123!',  
         'HOST': '127.0.0.1',  
         'PORT': '3306',  
         'OPTIONS': {  
@@ -150,7 +150,6 @@ REST_FRAMEWORK = {
   
   'DEFAULT_PAGINATION_CLASS':    'rest_framework_json_api.pagination.JsonApiPageNumberPagination',
   'DEFAULT_PARSER_CLASSES': (
-    # 'rest_framework.parsers.JSONParser',
     'rest_framework_json_api.parsers.JSONParser',
     'rest_framework.parsers.FormParser',
     'rest_framework.parsers.MultiPartParser',
@@ -169,10 +168,6 @@ REST_FRAMEWORK = {
      'rest_framework_json_api.renderers.JSONRenderer',
     ),
    
-#    'TEST_REQUEST_DEFAULT_FORMAT': 'vnd.api+json',
    'TEST_REQUEST_DEFAULT_FORMAT': 'application/vnd.api+json',
 
-    # 'DEFAULT_PERMISSION_CLASSES': [      
-    #     'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    # ],
 }

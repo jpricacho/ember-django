@@ -1,0 +1,60 @@
+<form>
+  <div class="row mb-3">
+    <label for="controlnum" class="col-sm-2 col-form-label">Control Number</label>
+    <div class="col-sm-10">
+        {{input class="form-control" value=form.controlnum name="controlnum" placeholder="Control Number" autocomplete='off'}}
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="accname" class="col-sm-2 col-form-label">Account Name</label>
+    <div class="col-sm-10">
+        {{input class="form-control" value=form.accname name="accname" placeholder="Account Name" autocomplete='off'}}
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="address" class="col-sm-2 col-form-label">Address</label>
+    <div class="col-sm-10">
+        {{input class="form-control" value=form.address name="address" placeholder="Address" autocomplete='off'}}
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="area" class="col-sm-2 col-form-label">Area</label>
+    <div class="col-sm-10">
+        {{input class="form-control" value=form.area name="area" placeholder="Area" autocomplete='off'}}
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="value" class="col-sm-2 col-form-label">Value</label>
+    <div class="col-sm-10">
+        {{input class="form-control" value=form.value name="value" placeholder="Value" autocomplete='off'}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="my-2">
+        <div>
+            <button class="btn btn-primary" {{action 'edit' model}}>Update</button>
+        </div>
+    </div>
+    
+    
+    <div class="my-2 {{if confirmingDelete  ''}}">
+        {{#if confirmingDelete}}
+            <div class="alert alert-danger" role="alert">
+                Are you sure you want to delete this listing?
+            </div>
+            <div>
+                <button class="btn btn-primary" {{action 'delete' model}}>
+                    Confrim Delete
+                </button>
+                <button class="btn btn-danger"{{action (mut confirmingDelete)false}}>
+                    Cancel
+                </button>
+            </div>
+        {{else}}
+            <div>
+                <button class="btn btn-danger" {{action (mut confirmingDelete) true}}>Delete</button>
+            </div>
+        {{/if}}
+    </div>
+</div>
+</form>
